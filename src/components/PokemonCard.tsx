@@ -9,16 +9,19 @@ function PokemonCard({pokemon}: PokemonCardProp){
         <div className="pokemon-card">
             <img
                 className="pokemon-avatar"
-                src={pokemon.sprites.front_shiny}
+                src={pokemon.sprites.other["official-artwork"].front_default}
                 alt=""
                 width={100}
             />
-            <p>Name: {pokemon.name}</p>
-            <p>Height: {pokemon.height}</p>
-            <p>Weight: {pokemon.weight}</p>
-            <div>Type(s): {pokemon.types.map((typeObj, slot) => (
+                <h2>{pokemon.name}</h2>
+            <div className="pokemon-stats">
+                <p>Height: {pokemon.height} ft |</p>
+                <p>Weight: {pokemon.weight} pounds |</p>
+                <p>Type(s): </p>{pokemon.types.map((typeObj, slot) => (
                 <p key={slot}>{typeObj.type.name}</p>
-            ))}</div>
+            ))}
+            </div>
+
         </div>
 
     )

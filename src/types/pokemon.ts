@@ -1,11 +1,15 @@
 export type Pokemon = {
-    name: string,
-    height: number,
-    weight: number,
+    name: string;
+    height: number;
+    weight: number;
     sprites: {
-        front_shiny: string,
-    }
-    types: PokemonType[],
+        other: {
+            "official-artwork": {
+                "front_default": string;
+            };
+        };
+    };
+    types: PokemonType[];
 }
 
 type PokemonType = {
@@ -14,3 +18,4 @@ type PokemonType = {
         name: string
     }
 }
+

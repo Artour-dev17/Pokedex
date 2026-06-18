@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState,} from "react";
 
 
 
@@ -15,11 +15,14 @@ function SearchForm({onSearch,}: onSearchProps){
 
 
 
-
-
     return (
-        <div>
+        <div className="search-form">
         <input
+            onKeyDown={(event)=>{
+                if(event.key === "Enter"){
+                    handleSearch();
+            }}}
+            className="search-input"
             value={searchTerm}
             placeholder="Pokemon name. . ."
             onChange={(event)=>
@@ -27,6 +30,7 @@ function SearchForm({onSearch,}: onSearchProps){
         />
         <button
             onClick={handleSearch}
+            className="search-btn"
         >
             Search
         </button>

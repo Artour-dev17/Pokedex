@@ -1,7 +1,7 @@
 import './App.css'
 import SearchForm from "./components/SearchForm.tsx";
 import {getPokemon} from "./services/pokemonApi.ts";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import type {Pokemon} from "./types/pokemon.ts";
 import PokemonCard from "./components/PokemonCard.tsx";
 
@@ -27,9 +27,12 @@ function App() {
     setLoading(false);
   }
 
+  useEffect(() => {
+    handlePokemonSearch("charizard");
+  }, []);
 
   return (
-    <div>
+    <div className="app">
     <h2>Pokedex</h2>
 
     <SearchForm onSearch={handlePokemonSearch} />
